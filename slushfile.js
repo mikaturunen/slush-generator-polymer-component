@@ -79,8 +79,8 @@ gulp.task("default", function (done) {
 
 		var turnCamelCaseToDashed = /([a-z])([A-Z])/g;
 
-        answers.componentNameCamelCase = _.slugify(answers.componentNameCamelCase);
-		answers.componentNameDashCase = answers.componentNameDashCase.replace(turnCamelCaseToDashed, "$1-$2").toLowerCase();
+        //answers.componentNameCamelCase = _.slugify(answers.componentNameCamelCase);
+		answers.componentNameDashCase = answers.componentNameCamelCase.replace(turnCamelCaseToDashed, "$1-$2").toLowerCase();
 
         gulp.src(__dirname + "/templates/**")
             .pipe(template(answers))
@@ -90,7 +90,7 @@ gulp.task("default", function (done) {
                 }
             }))
             .pipe(conflict("./"))
-            .pipe(gulp.dest(path.join(__dirname, "./components/", "/" + answers.componentNameDashCase)))
+            .pipe(gulp.dest(path.join(process.cwd(), "./components/", "/" + answers.componentNameDashCase)))
             .pipe(install())
             .on("end", function () {
                 done();
