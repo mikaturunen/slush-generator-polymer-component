@@ -1,4 +1,4 @@
-# Slush Polymer-component [![Build Status](https://secure.travis-ci.org/mikaturunen/slush-polymer-component.png?branch=master)](https://travis-ci.org/mikaturunen/slush-polymer-component) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-polymer-component.png)](http://badges.enytc.com/for/npm/slush-polymer-component)
+# Slush Polymer-component [![Build Status](https://secure.travis-ci.org/mikaturunen/slush-generator-polymer-component.png?branch=master)](https://travis-ci.org/mikaturunen/slush-generator-polymer-component) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-polymer-component.png)](http://badges.enytc.com/for/npm/slush-polymer-component)
 
 > Generator for Polymer component with some implied best practices (imd, typescript, es2015)
 
