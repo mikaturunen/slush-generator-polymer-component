@@ -1,6 +1,6 @@
 /*
- * slush-slush-generator-polymer-component
- * https://github.com/mikaturunen/slush-slush-generator-polymer-component
+ * slush-generator-polymer-component
+ * https://github.com/mikaturunen/slush-generator-polymer-component
  *
  * Copyright (c) 2016, Mika Turunen
  * Licensed under the MIT license.
@@ -57,9 +57,14 @@ var defaults = (function () {
 
 gulp.task("default", function (done) {
     var prompts = [{
-        name: "componentName",
-        message: "What is the name of the Polymer component you are making?"
+        name: "componentNameCamelCase",
+        message: "What is the name of the Polymer component you are making (give it in camelCase, example: fooBarThis)?"
     },
+	// {
+	// 	type: "confirm",
+	// 	name: "useDotCaseInFileNames",
+	// 	message "Use dot casing in file names (otherwise uses dash case. Dot: foo.bar.js, Dash: foo-bar.js)?"
+	// }
 	{
         type: "confirm",
         name: "moveon",
@@ -72,17 +77,20 @@ gulp.task("default", function (done) {
             return done();
         }
 
-        answers.componentName = _.slugify(answers.componentName);
+		var turnCamelCaseToDashed = /([a-z])([A-Z])/g;
+
+        answers.componentNameCamelCase = _.slugify(answers.componentNameCamelCase);
+		answers.componentNameDashCase = answers.componentNameDashCase.replace(turnCamelCaseToDashed, "$1-$2").toLowerCase();
 
         gulp.src(__dirname + "/templates/**")
             .pipe(template(answers))
             .pipe(rename(function (file) {
                 if (file.basename[0] === "_") {
-                    file.basename = "." + file.basename.slice(1);
+                    file.basename = answers.componentNameDashCase + file.basename.slice(1);
                 }
             }))
             .pipe(conflict("./"))
-            .pipe(gulp.dest("./"))
+            .pipe(gulp.dest(path.join(__dirname, "./components/", "/" + answers.componentNameDashCase)))
             .pipe(install())
             .on("end", function () {
                 done();
