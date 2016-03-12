@@ -2,7 +2,6 @@
 
 > Generator for Polymer component with some implied best practices (imd, typescript, es2015)
 
-
 ## Getting Started
 
 Install `slush-polymer-component` globally:
@@ -13,16 +12,10 @@ $ npm install -g slush-polymer-component
 
 ### Usage
 
-Create a new folder for your project:
+The gnerator assumes you are storing all your Polymer components in project/components/ directory. Navigate to your project directory and run the generator.
 
 ```bash
-$ mkdir my-slush-polymer-component
-```
-
-Run the generator from within the new folder:
-
-```bash
-$ cd my-slush-polymer-component && slush polymer-component
+slush polymer-component
 ```
 
 ## Getting To Know Slush
@@ -40,7 +33,7 @@ See the [CONTRIBUTING Guidelines](https://github.com/mikaturunen/slush-polymer-c
 ## Support
 If you have any problem or suggestion please open an issue [here](https://github.com/mikaturunen/slush-polymer-component/issues).
 
-## License 
+## License
 
 The MIT License
 
@@ -66,4 +59,3 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
-
