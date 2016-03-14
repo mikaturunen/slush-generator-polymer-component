@@ -18,6 +18,8 @@ The gnerator assumes you are storing all your Polymer components in project/comp
 slush polymer-component
 ```
 
+Note that the whole package assumes you have Polymer typedefinitions available in your toolchain for compilation, less compilation and jade compilation available. We do not provide any of that.
+
 ## Getting To Know Slush
 
 Slush is a tool that uses Gulp for project scaffolding.
