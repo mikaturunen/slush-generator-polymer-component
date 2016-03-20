@@ -1,9 +1,7 @@
-link(rel="import" href="../../components/polymer/polymer.html")
-
-//- TODO link a common style component if you have one or remove this line
+link(rel="import" href="<%= relativeComponentLocation %>polymer/polymer.html")
 
 dom-module#<%= componentNameDashCase %>
-	link(rel="import" type="css" href="../../components/<%= componentNameDashCase %>/<%= componentNameDashCase %>.css")
+	link(rel="import" type="css" href="<%= relativeComponentLocation %><%= componentNameDashCase %>/<%= componentNameDashCase %>.css")
 	template
 		//- If you had a common style file, uncomment the below line and add the path to the style component --
 		//- Remove these comments otherwise
@@ -14,4 +12,4 @@ dom-module#<%= componentNameDashCase %>
 		//- div
 		//-		span Hello component <%= componentNameCamelCase %>
 
-	script(src="../../components/<%= componentNameDashCase %>/<%= componentNameDashCase %>.js")
+	script(src="<%= relativeComponentLocation %><%= componentNameDashCase %>/<%= componentNameDashCase %>.js")
