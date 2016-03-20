@@ -66,6 +66,10 @@ gulp.task("default", function (done) {
 	// 	message "Use dot casing in file names (otherwise uses dash case. Dot: foo.bar.js, Dash: foo-bar.js)?"
 	// }
 	{
+		name: "relativeComponentLocation",
+		message: "What is the relative URL path for your external components (default: '../../components/')?"
+	},
+	{
         type: "confirm",
         name: "moveon",
         message: "Continue?"
@@ -75,7 +79,20 @@ gulp.task("default", function (done) {
     inquirer.prompt(prompts, function (answers) {
         if (!answers.moveon) {
             return done();
-        }
+        } else if (answers.name === "") {
+			console.log("No component provided.");
+			return done();
+		}
+
+		if (answers.relativeComponentLocation === "") {
+			relativeComponentLocation = "../../components/";
+		}
+
+		if (answers.relativeComponentLocation.slice(-1) !== "/") {
+			relativeComponentLocation += "/";
+		}
+		// URL does not support backslashes. Replace them.
+		relativeComponentLocation.replace("\\", "/");
 
 		var turnCamelCaseToDashed = /([a-z])([A-Z])/g;
 
