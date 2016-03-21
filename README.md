@@ -12,7 +12,7 @@ $ npm install -g slush-polymer-component
 
 ### Usage
 
-The gnerator assumes you are storing all your Polymer components in project/components/ directory. Navigate to your project directory and run the generator.
+The generator assumes you are storing all your Polymer components in project/components/ directory. Navigate to your project directory and run the generator.
 
 ```bash
 slush polymer-component
