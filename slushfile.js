@@ -53,7 +53,6 @@ gulp.task("default", function (done) {
 
 		var turnCamelCaseToDashed = /([a-z])([A-Z])/g;
 
-        //answers.componentNameCamelCase = _.slugify(answers.componentNameCamelCase);
 		answers.componentNameDashCase = answers.componentNameCamelCase.replace(turnCamelCaseToDashed, "$1-$2").toLowerCase();
 
         gulp.src(__dirname + "/templates/**")
