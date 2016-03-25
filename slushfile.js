@@ -52,9 +52,6 @@ var defaults = (function () {
     };
 })();
 
-// var turnCamelCaseToDashed = /([a-z])([A-Z])/g
-// var myStr = myStr.replace(turnCamelCaseToDashed, "$1-$2").toLowerCase();
-
 gulp.task("default", function (done) {
     var prompts = [{
         name: "componentNameCamelCase",
