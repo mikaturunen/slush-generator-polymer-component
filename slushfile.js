@@ -60,11 +60,6 @@ gulp.task("default", function (done) {
         name: "componentNameCamelCase",
         message: "What is the name of the Polymer component you are making (give it in camelCase, example: fooBarThis)?"
     },
-	// {
-	// 	type: "confirm",
-	// 	name: "useDotCaseInFileNames",
-	// 	message "Use dot casing in file names (otherwise uses dash case. Dot: foo.bar.js, Dash: foo-bar.js)?"
-	// }
 	{
 		name: "relativeComponentLocation",
 		message: "What is the relative URL path for your external components (default: '../../components/')?"
