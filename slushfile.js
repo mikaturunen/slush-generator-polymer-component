@@ -36,20 +36,20 @@ gulp.task("default", function (done) {
     inquirer.prompt(prompts, function (answers) {
         if (!answers.moveon) {
             return done();
-        } else if (answers.name === "") {
+        } else if (!answers.name) {
 			console.log("No component provided.");
 			return done();
 		}
 
-		if (answers.relativeComponentLocation === "" || answers.relativeComponentLocation === undefined) {
-			relativeComponentLocation = "../../components/";
+		if (!answers.relativeComponentLocation) {
+			answers.relativeComponentLocation = "../../components/";
 		}
 
 		if (answers.relativeComponentLocation.slice(-1) !== "/") {
-			relativeComponentLocation += "/";
+			answers.relativeComponentLocation += "/";
 		}
 		// URL does not support backslashes. Replace them.
-		relativeComponentLocation.replace("\\", "/");
+		answers.relativeComponentLocation = answers.relativeComponentLocation.replace("\\", "/");
 
 		var turnCamelCaseToDashed = /([a-z])([A-Z])/g;
 
