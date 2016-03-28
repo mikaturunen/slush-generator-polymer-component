@@ -41,7 +41,7 @@ gulp.task("default", function (done) {
 			return done();
 		}
 
-		if (answers.relativeComponentLocation === "") {
+		if (answers.relativeComponentLocation === "" || answers.relativeComponentLocation === undefined) {
 			relativeComponentLocation = "../../components/";
 		}
 
