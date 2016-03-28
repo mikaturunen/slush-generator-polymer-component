@@ -36,7 +36,7 @@ gulp.task("default", function (done) {
     inquirer.prompt(prompts, function (answers) {
         if (!answers.moveon) {
             return done();
-        } else if (!answers.name) {
+        } else if (!answers.componentNameCamelCase) {
 			console.log("No component provided.");
 			return done();
 		}
